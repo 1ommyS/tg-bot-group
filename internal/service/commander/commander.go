@@ -27,6 +27,8 @@ func (commander *Commander) HandleUpdate(update tgbotapi.Update) {
 			commander.SendStartMessage(update.Message)
 		case "help":
 			commander.SendHelpMessage(update.Message)
+		case "notifyAll":
+			commander.NotifyAll(update.Message)
 		default:
 			commander.HandleDefault(update.Message)
 		}
